@@ -1,7 +1,11 @@
+import React from "react";
+import { ModeContext } from "./ModeContext";
 function Header({ isDarkMode }) {
+  const mode = React.useContext(ModeContext);
+  console.log(mode);
   return (
-    <h1 className={`heading ${isDarkMode ? "heading-dark" : "heading-light"}`}>
-      {isDarkMode ? "Dark Mode" : "Light Mode"}
+    <h1 className={`heading ${mode.isDarkMode ? "heading-dark" : "heading-light"}`}>
+      {mode.isDarkMode ? "Dark Mode" : "Light Mode"}
     </h1>
   );
 }
